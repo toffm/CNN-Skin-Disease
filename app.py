@@ -5,7 +5,7 @@ import cv2  # OpenCV for image processing
 from PIL import Image
 
 # Load trained model
-model = tf.keras.models.load_model("C:/Users/Admin/Documents/Machine Learning CNN/model.h5")
+model = tf.keras.models.load_model("model.h5")
 
 # Class labels (Ensure correct order)
 class_labels = [
