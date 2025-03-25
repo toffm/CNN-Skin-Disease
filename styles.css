@@ -1,33 +1,72 @@
-/* Dark Mode Styles */
+/* Dark mode styles optimized for 1920x1080 resolution - no scrolling */
 body {
     background-color: #121212;
     color: #ffffff;
     font-family: 'Inter', sans-serif;
-}
-
-/* Main App Layout */
-.stApp {
-    background-color: #121212;
-    height: 100vh;
+    margin: 0;
+    padding: 0;
+    max-width: 1920px;
     overflow: hidden;
 }
 
-/* Column Styling */
-.block-container {
-    max-width: 1880px !important;
-    padding: 20px !important;
+/* Main app styling with fixed height */
+.stApp {
+    background-color: #121212;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
 }
 
-/* Buttons */
+/* Better container spacing */
+.block-container {
+    max-width: 1880px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 10px !important;
+}
+
+/* Column spacing and sizing */
+.row-widget.stHorizontal {
+    gap: 40px !important;
+}
+
+/* Typography */
+.stMarkdown h1, .stMarkdown h2, .stMarkdown h3, .stMarkdown h4, .stMarkdown h5, .stMarkdown h6 {
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-top: 0;
+}
+
+.stMarkdown h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.stMarkdown h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.stText {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Button styling */
 .stButton>button {
     background-color: #2962ff;
     color: #ffffff;
     border-radius: 8px;
     padding: 10px 24px;
     font-size: 16px;
+    font-weight: 500;
     border: none;
-    transition: 0.2s ease;
+    transition: all 0.2s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .stButton>button:hover {
@@ -36,29 +75,185 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Results Panel */
-.result-panel {
+/* File uploader */
+.stFileUploader {
     background-color: #1e1e1e;
-    border-radius: 12px;
+    color: #ffffff;
+    border: 1px solid #333;
     padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    margin-bottom: 15px;
 }
 
-/* Image Display */
+.stFileUploader:hover {
+    border-color: #2962ff;
+    box-shadow: 0 0 0 1px #2962ff;
+}
+
+/* Images - DRASTICALLY REDUCED SIZE */
+.stImage {
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    max-height: 35vh !important; /* Much smaller height */
+    max-width: 90% !important;
+    width: auto !important;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
 .image-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40vh;
+    height: 40vh; /* Much smaller container height */
+    padding: 10px;
+    overflow: hidden; /* Prevent overflow */
 }
 
-/* Footer */
+/* Result and info panels */
+.result-panel {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.info-panel {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.info-panel h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.info-panel ul {
+    margin-bottom: 0;
+    padding-left: 20px;
+}
+
+.info-panel li {
+    margin-bottom: 3px;
+}
+
+.disease-name {
+    color: #4ade80;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.probability-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.probability-bar {
+    height: 10px;
+    background-color: #2962ff;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.disclaimer {
+    font-size: 12px;
+    margin-top: 10px;
+    color: #aaa;
+}
+
+/* Placeholder styling */
+.placeholder-container {
+    height: 40vh; /* Reduced to match image container */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    margin: 10px;
+}
+
+.placeholder-icon {
+    font-size: 48px; /* Much smaller icon */
+    margin-bottom: 15px;
+}
+
+/* Footer disclaimer */
 .footer-disclaimer {
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
     background-color: rgba(0,0,0,0.7);
     padding: 8px;
     font-size: 12px;
     text-align: center;
+}
+
+/* Hide Streamlit elements we don't need */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+/* Column specific adjustments */
+.css-12oz5g7, .css-1v3fvcr {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Force the columns to respect space */
+[data-testid="column"] {
+    padding: 0 20px !important;
+}
+
+/* Left column spacing */
+[data-testid="column"]:first-child {
+    padding-right: 20px !important;
+    max-width: 35% !important;
+    overflow-y: auto;
+    height: calc(100vh - 50px);
+    padding-bottom: 30px !important; /* Space for footer */
+}
+
+/* Right column spacing - SIGNIFICANTLY REDUCED */
+[data-testid="column"]:nth-child(2) {
+    padding-left: 20px !important;
+    min-width: 65% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 45vh !important; /* Fixed maximum height */
+    overflow: hidden; /* Prevent overflow */
+}
+
+/* Added stronger constraints for images */
+[data-testid="column"]:nth-child(2) img {
+    max-height: 35vh !important;
+    max-width: 90% !important;
+}
+
+/* Ensure stImage is constrained */
+div[data-testid="stImage"] {
+    max-height: 35vh !important;
+    overflow: hidden !important;
+}
+
+/* Enforce size constraints on all image elements */
+img {
+    max-height: 35vh !important;
+}
+
+/* Compact all Streamlit widgets */
+.stSelectbox, .stMultiselect, .stSlider {
+    padding-bottom: 10px !important;
 }
