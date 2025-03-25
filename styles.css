@@ -1,0 +1,64 @@
+/* Dark Mode Styles */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Main App Layout */
+.stApp {
+    background-color: #121212;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Column Styling */
+.block-container {
+    max-width: 1880px !important;
+    padding: 20px !important;
+}
+
+/* Buttons */
+.stButton>button {
+    background-color: #2962ff;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 16px;
+    border: none;
+    transition: 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.stButton>button:hover {
+    background-color: #1e88e5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Results Panel */
+.result-panel {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Image Display */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+/* Footer */
+.footer-disclaimer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.7);
+    padding: 8px;
+    font-size: 12px;
+    text-align: center;
+}
